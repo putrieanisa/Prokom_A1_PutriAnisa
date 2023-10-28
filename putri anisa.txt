@@ -1,0 +1,83 @@
+def minuman_soda(): #def untuk menyimpan informasi tentang minuman soda
+    print('~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~') #hanya digunakan untuk mempercantik output
+    print('|           ~MINUMAN SODA~         |') #digunakan untuk menampilkan jenis minuman soda yang tersedia sekaligus harganya
+    print('|  [1]: COCA COLA      :6.000      |') 
+    print('|  [2]: Fanta          :6.000      |')
+    print('|  [3]: Sprite         :6.000      |')
+    print('~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~')
+    harga_soda = { #dictionary untuk mempermudah dalam pemanggilan harga minuman soda
+        1:6.000,
+        2:6.000,
+        3:6.000,
+    }
+    soda = int(input("Masukkan minuman soda yang kamu mau: ")) #pengguna diminta untuk menginputkan satu angka untuk memilih jenis soda yang dibeli
+    jumlah = int(input("Masukkan jumlah yang ingin kamu beli: ")) #pengguna untuk menginputkan jumlah minuman yang ingin dibeli
+    while (True) : #perulangan untuk kondisi dimana jenis kopi yang dimasukan sesuai atau tidak
+        if soda in harga_soda: #jika angka yang diinputkan ada di daftar harga_kopi maka pesanan akan diterima
+            total_harga = harga_soda[soda] * jumlah #mengalikan harga dari minuman soda dan jumlah minuman yang dibeli 
+            hasil = "{:.3f}".format(total_harga) #agar hasil perkalian dapat menunjukan output dengan 3 angka dibelakng koma sebagai isyarat bahwa harga dalam ribuan
+            print(f"Berikut total harga yang harus dibayar: {hasil}") #menampilkan jumlah nilai yang harus dibayarkan dalam ribuan
+            break #menghentikan perulangan dan akan berlanjut ketahap selanjutnya
+        else : #jika angka yang diinputkan tidak ada di daftar harga_kopi maka program akan...
+            print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~') 
+            print('|                           MOHON MAAF                           |')
+            print('|   Minuman Yang Kamu Pilih Tidak Tersedia. Silahkan Coba Lagi!  |') #mencetak kalimat 'Maaf Minuman Yang Kamu Pilih Tidak Tersedia. Silahkan Coba Lagi!'...
+            print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+            break #lalu program berhenti
+    
+def minuman_kopi(): #def untuk menyimpan informasi tentang minuman kopi
+    print('~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~') #hanya digunakan untuk mempercantik output
+    print('|          ~MINUMAN KOPI~          |') #digunakan untuk menampilkan jenis minuman soda yang tersedia sekaligus harganya
+    print('|  [1]: Good Day         :7.000    |')
+    print('|  [2]: Nescafe          :10.000   |')
+    print('|  [3]: ABC              :5.000    |')
+    print('|  [4]: Kopi Kenangan    :10.000   |')
+    print('~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~')
+    harga_kopi = { #dictionary untuk mempermudah dalam pemanggilan harga minuman kopi
+        1:7.000,
+        2:10.000,
+        3:5.000,
+        4:10.000,
+    }
+    kopi = int(input("Masukkan minuman kopi yang kamu mau: ")) #pengguna diminta untuk menginputkan satu angka untuk memilih jenis kopi yang dibeli
+    jumlah = int(input("Masukkan jumlah yang ingin kamu beli: ")) #pengguna untuk menginputkan jumlah minuman yang ingin dibeli
+    while (True) : #perulangan untuk kondisi dimana jenis kopi yang dimasukan sesuai atau tidak
+        if kopi in harga_kopi: #jika angka yang diinputkan ada di daftar harga_kopi maka pesanan akan diterima
+            total_harga = harga_kopi[kopi] * jumlah #mengalikan harga dari minuman soda dan jumlah minuman yang dibeli 
+            hasil = "{:.3f}".format(total_harga) #agar hasil perkalian dapat menunjukan output dengan 3 angka dibelakng koma sebagai isyarat bahwa harga dalam ribuan
+            print(f"Berikut total harga yang harus dibayar: {hasil}") #menampilkan jumlah nilai yang harus dibayarkan dalam ribuan
+            break #menghentikan perulangan dan akan berlanjut ketahap selanjutnya
+        else : #jika angka yang diinputkan tidak ada di daftar harga_kopi maka program akan...
+            print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~') 
+            print('|                           MOHON MAAF                           |')
+            print('|   Minuman Yang Kamu Pilih Tidak Tersedia. Silahkan Coba Lagi!  |') #mencetak kalimat 'Maaf Minuman Yang Kamu Pilih Tidak Tersedia. Silahkan Coba Lagi!'...
+            print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+            break #lalu program berhenti
+
+
+def jenis_minuman(): #def untuk menyimpan informasi tentang jenis minuman yang tersedia
+    print('~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~') #hanya digunakan untuk mempercantik output
+    print('|          ~DAFTAR MINUMAN~        |') #digunakan untuk menampilkan jenis minuman yang tersedia 
+    print('|  [1]: SODA                       |')
+    print('|  [2]: KOPI                       |')
+    print('~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~')
+    minuman = int(input('Mau minuman apa hari ini: ')) #meminta pengguna untuk memasukkan angka 1 atau 2 untuk memilih kedua jenis minuman yang disediakan
+    if minuman == 1 : #percangan pertama, jika pengguna memilih 1 maka akan diarahkan kepada def minuman soda
+        minuman_soda()
+    elif minuman == 2 : #percangan kedua, jika pengguna memilih 2 maka akan diarahkan kepada def minuman kopi
+        minuman_kopi()
+    else : #jika yang dimasukan bukan 1 atau 2 maka program akan mengeksekusi else lalu mencetak string 'Maaf Minuman Tidak Tersedia'
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~') 
+        print('|                           MOHON MAAF                           |')
+        print('|   Minuman Yang Kamu Pilih Tidak Tersedia. Silahkan Coba Lagi!  |') #mencetak kalimat 'Maaf Minuman Yang Kamu Pilih Tidak Tersedia. Silahkan Coba Lagi!'...
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+
+
+if __name__ == "__main__": #menunjukkan bahwa blok kode di dalamnya hanya akan dieksekusi jika skrip dijalankan langsung (bukan diimpor sebagai modul)
+    while(True): #program akan berulang kembali ke jenis_minuman() yakni menu def pertama jika eksekusi sebelumnya benar 
+        jenis_minuman()
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~') #sebelum program melakukan perulangan kembali di sini ada ucapan terima kasih untuk akhir dari eksekusi program sebelumnyaa
+        print('|                          TERIMA KASIH                          |')
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~•~❉✿❉~•~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        print('\n') #instruksi untuk memulai baris baru (memberi jarak antar baris)
+        print('\n')
